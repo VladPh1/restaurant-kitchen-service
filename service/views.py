@@ -26,6 +26,7 @@ def index(request: HttpRequest) -> HttpResponse:
 
 class DishTypeListView(LoginRequiredMixin, generic.ListView):
     model = DishType
+    paginate_by = 5
     template_name = "service/dish_type_list.html"
     context_object_name = "dish_type_list"
 
