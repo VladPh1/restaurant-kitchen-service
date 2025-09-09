@@ -36,6 +36,12 @@ class DishTypeCreateView(LoginRequiredMixin, generic.CreateView):
     success_url = reverse_lazy("service:dish-type-list")
 
 
+class DishTypeUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = DishType
+    fields = "__all__"
+    success_url = reverse_lazy("service:dish-type-list")
+
+
 class DishListView(LoginRequiredMixin, generic.ListView):
     name = Dish
     paginate_by = 5

@@ -4,6 +4,7 @@ from service.views import (
     index,
     DishTypeListView,
     DishTypeCreateView,
+    DishTypeUpdateView,
     DishListView,
     DishCreateView,
     DishUpdateView,
@@ -15,11 +16,20 @@ from service.views import (
 
 urlpatterns = [
     path("", index, name="index"),
-    path("dish_type/", DishTypeListView.as_view(), name="dish-type-list"),
+    path(
+        "dish_type/",
+        DishTypeListView.as_view(),
+        name="dish-type-list"
+    ),
     path(
         "dish_type/create/",
         DishTypeCreateView.as_view(),
         name="dish-type-create",
+    ),
+path(
+        "dish_type/<int:pk>/create/",
+        DishTypeUpdateView.as_view(),
+        name="dish-type-update",
     ),
     path("dish/", DishListView.as_view(), name="dish-list"),
     path("dish/<int:pk>/", DishDetailView.as_view(), name="dish-detail"),
