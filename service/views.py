@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views import generic
 
@@ -155,13 +155,13 @@ class CookDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Cook
     success_url = reverse_lazy("")
 
-# @login_required
-# def toggle_assign_to_dish(request, pk):
-#     driver = Cook.objects.get(id=request.user.id)
-#     if (
-#         Cook.objects.get(id=pk) in Cook.dishes.all()
-#     ):  # probably could check if car exists
-#         Cook.dishes.remove(pk)
-#     else:
-#         Cook.dishes.add(pk)
-#     return HttpResponseRedirect(reverse_lazy("service:dish-detail", args=[pk]))
+@login_required
+def toggle_assign_to_dish(request, pk):
+    cook = get_object_or_404(Cook, id=request.user.id)
+    dish = get_object_or_404(Dish, id=pk)
+
+    if cook.dishes.filter(id=dish.id).exists():
+        cook.dishes.remove(dish)
+    else:
+        cook.dishes.add(dish)
+    return redirect(reverse_lazy("service:dish-detail", kwargs={"pk": pk}))

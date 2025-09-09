@@ -11,6 +11,7 @@ from service.views import (
     DishUpdateView,
     DishDeleteView,
     DishDetailView,
+    toggle_assign_to_dish,
     CookListView,
     CookDetailView,
     CookCreateView,
@@ -46,6 +47,11 @@ path(
     path("dish/create/", DishCreateView.as_view(), name="dish-create"),
     path("dish/<int:pk>/update/", DishUpdateView.as_view(), name="dish-update"),
     path("dish/<int:pk>/delete/", DishDeleteView.as_view(), name="dish-delete"),
+    path(
+        "dish/<int:pk>/toggle-assign/",
+        toggle_assign_to_dish,
+        name="toggle-dish-assign",
+    ),
     path("cook/", CookListView.as_view(), name="cook-list"),
     path(
         "cook/<int:pk>/", CookDetailView.as_view(), name="cook-detail"
