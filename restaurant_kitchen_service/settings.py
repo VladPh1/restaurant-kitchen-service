@@ -130,6 +130,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = "service.Cook"
 
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 LOGIN_REDIRECT_URL = "/service/"
