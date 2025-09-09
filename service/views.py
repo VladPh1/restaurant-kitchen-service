@@ -150,3 +150,7 @@ class CookYearOfExperienceUpdateView(LoginRequiredMixin, generic.UpdateView):
     form_class = CookYearOfExperienceUpdateForm
     success_url = reverse_lazy("service:cook-list")
 
+
+class CookDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Cook
+    success_url = reverse_lazy("")

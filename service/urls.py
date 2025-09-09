@@ -15,6 +15,7 @@ from service.views import (
     CookDetailView,
     CookCreateView,
     CookYearOfExperienceUpdateView,
+    CookDeleteView,
 )
 
 
@@ -54,6 +55,11 @@ path(
         "cook/<int:pk>/update/",
         CookYearOfExperienceUpdateView.as_view(),
         name="cook-update",
+    ),
+    path(
+        "cook/<int:pk>/delete/",
+        CookDeleteView.as_view(),
+        name="cook-delete",
     ),
 ]
 
