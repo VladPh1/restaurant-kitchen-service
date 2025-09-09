@@ -26,3 +26,11 @@ class DishTypeListView(LoginRequiredMixin, generic.ListView):
     model = DishType
     template_name = "service/dish_type_list.html"
     context_object_name = "dish_type_list"
+
+
+class DishListView(LoginRequiredMixin, generic.ListView):
+    name = Dish
+    paginate_by = 5
+    template_name = "service/dish_list.html"
+    context_object_name = "dish_list"
+    queryset = Dish.objects.select_related("dish_type").order_by("name")
