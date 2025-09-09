@@ -30,6 +30,12 @@ class DishTypeListView(LoginRequiredMixin, generic.ListView):
     context_object_name = "dish_type_list"
 
 
+class DishTypeCreateView(LoginRequiredMixin, generic.CreateView):
+    model = DishType
+    fields = "__all__"
+    success_url = reverse_lazy("service:dish-type-list")
+
+
 class DishListView(LoginRequiredMixin, generic.ListView):
     name = Dish
     paginate_by = 5
