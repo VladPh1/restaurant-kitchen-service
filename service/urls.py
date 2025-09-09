@@ -14,6 +14,7 @@ from service.views import (
     CookListView,
     CookDetailView,
     CookCreateView,
+    CookYearOfExperienceUpdateView,
 )
 
 
@@ -49,6 +50,11 @@ path(
         "cook/<int:pk>/", CookDetailView.as_view(), name="cook-detail"
     ),
     path("cook/create/", CookCreateView.as_view(), name="cook-create"),
+    path(
+        "cook/<int:pk>/update/",
+        CookYearOfExperienceUpdateView.as_view(),
+        name="cook-update",
+    ),
 ]
 
 app_name = "service"
