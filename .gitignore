@@ -1,6 +1,5 @@
 .idea
 .venv
-core
 **__pycache__
 .vscode/
 *.iml
