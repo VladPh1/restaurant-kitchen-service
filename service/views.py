@@ -50,6 +50,11 @@ class DishUpdateView(LoginRequiredMixin, generic.UpdateView):
     success_url = reverse_lazy("service:dish-list")
 
 
+class DishDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Dish
+    success_url = reverse_lazy("service:dish-list")
+
+
 class CookListView(LoginRequiredMixin, generic.ListView):
     model = Cook
     paginate_by = 5
