@@ -93,6 +93,11 @@ class DishListView(LoginRequiredMixin, generic.ListView):
 class DishDetailView(LoginRequiredMixin, generic.DetailView):
     model = Dish
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["cook"] = Cook.objects.get(id=self.request.user.id)
+        return context
+
 
 class DishCreateView(LoginRequiredMixin, generic.CreateView):
     model = Dish

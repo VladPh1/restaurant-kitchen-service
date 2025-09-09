@@ -15,7 +15,7 @@
   <h1>
     Cooks
 
-    {% if dish in cook.dish.all %}
+    {% if dish in cook.dishes.all %}
       <a href="{% url 'service:toggle-dish-assign' pk=dish.id %}" class="btn btn-danger link-to-page">
         Delete me from this dish
       </a>
