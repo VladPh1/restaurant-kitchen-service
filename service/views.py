@@ -38,6 +38,10 @@ class DishListView(LoginRequiredMixin, generic.ListView):
     queryset = Dish.objects.select_related("dish_type").order_by("name")
 
 
+class DishDetailView(LoginRequiredMixin, generic.DetailView):
+    model = Dish
+
+
 class DishCreateView(LoginRequiredMixin, generic.CreateView):
     model = Dish
     form_class = DishForm
@@ -60,3 +64,4 @@ class CookListView(LoginRequiredMixin, generic.ListView):
     paginate_by = 5
     template_name = "service/cook_list.html"
     context_object_name = "cook_list"
+
