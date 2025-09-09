@@ -1,6 +1,8 @@
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
+from django.views import generic
 
 from service.models import DishType, Cook, Dish
 
@@ -19,3 +21,8 @@ def index(request: HttpRequest) -> HttpResponse:
         "num_visits": num_visits + 1
     }
     return render(request, "service/index.html", context=context)
+
+class DishTypeListView(LoginRequiredMixin, generic.ListView):
+    model = DishType
+    template_name = "service/dish_type_list.html"
+    context_object_name = "dish_type_list"

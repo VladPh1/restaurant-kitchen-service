@@ -7,6 +7,7 @@ from service.views import (
 
 urlpatterns = [
     path("", index, name="index"),
+    path("dish_type/", LiteraryFormatListView.as_view(), name="dish-type-list"),
 ]
 
 app_name = "service"
