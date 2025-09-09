@@ -12,6 +12,7 @@ from service.views import (
     DishDeleteView,
     DishDetailView,
     CookListView,
+    CookDetailView,
 )
 
 
@@ -43,6 +44,9 @@ path(
     path("dish/<int:pk>/update/", DishUpdateView.as_view(), name="dish-update"),
     path("dish/<int:pk>/delete/", DishDeleteView.as_view(), name="dish-delete"),
     path("cook/", CookListView.as_view(), name="cook-list"),
+    path(
+        "cook/<int:pk>/", CookDetailView.as_view(), name="cook-detail"
+    ),
 ]
 
 app_name = "service"

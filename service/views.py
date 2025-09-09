@@ -132,3 +132,8 @@ class CookListView(LoginRequiredMixin, generic.ListView):
             if name:
                 queryset = queryset.filter(username__icontains=name)
         return queryset
+
+
+class CookDetailView(LoginRequiredMixin, generic.DetailView):
+    model = Cook
+    queryset = Cook.objects.all().prefetch_related("dish__dish_type")
