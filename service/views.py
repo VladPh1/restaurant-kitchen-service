@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import HttpRequest, HttpResponse
+from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
@@ -154,3 +154,14 @@ class CookYearOfExperienceUpdateView(LoginRequiredMixin, generic.UpdateView):
 class CookDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Cook
     success_url = reverse_lazy("")
+
+# @login_required
+# def toggle_assign_to_dish(request, pk):
+#     driver = Cook.objects.get(id=request.user.id)
+#     if (
+#         Cook.objects.get(id=pk) in Cook.dishes.all()
+#     ):  # probably could check if car exists
+#         Cook.dishes.remove(pk)
+#     else:
+#         Cook.dishes.add(pk)
+#     return HttpResponseRedirect(reverse_lazy("service:dish-detail", args=[pk]))

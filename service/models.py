@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.urls import reverse
 
 
 class DishType(models.Model):
@@ -24,6 +25,8 @@ class Cook(AbstractUser):
     def __str__(self):
         return f"{self.username}: ({self.first_name} {self.last_name})"
 
+    def get_absolute_url(self):
+        return reverse("service:cook-detail", args=[str(self.id)])
 
 class Dish(models.Model):
     name = models.CharField(max_length=255)
@@ -45,5 +48,3 @@ class Dish(models.Model):
     def __str__(self):
         return f"{self.name} (price: {self.price} , dish type: {self.dish_type.name})"
 
-    # def get_absolute_url(self):
-    #     return reverse("service:dish-detail", args=[str(self.id)])
