@@ -47,7 +47,7 @@ class Dish(models.Model):
         on_delete=models.CASCADE,
         related_name="dishes"
     )
-    ingredient = models.ManyToManyField(
+    ingredients = models.ManyToManyField(
         Ingredient,
         related_name="dishes_with_this_ingredient"
     )

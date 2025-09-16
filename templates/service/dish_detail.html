@@ -24,7 +24,7 @@
     <p>
       <ul>
         {% for ingredient in dish.ingredients.all %}
-          <li>{{ ingredient }}</li>
+          <li>{{ dish.ingredient }}</li>
         {% empty %}
           <li>No ingredients listed.</li>
         {% endfor %}
