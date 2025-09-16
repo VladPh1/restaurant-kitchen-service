@@ -7,11 +7,19 @@
       Delete
     </a>
 
-    <a href="{% url 'service:dish-type-update' pk=dish.id %}" class="btn btn-secondary link-to-page">
+    <a href="{% url 'service:dish-update' pk=dish.id %}" class="btn btn-secondary link-to-page">
       Update
     </a>
   </h1>
   <p>Dish Type: ({{ dish.dish_type.name }})</p>
+  <p>Dish Description:
+    <br>
+    {{ dish.description }}</p>
+  <h1>
+    Ingredients:
+  <br>
+  {{ dish.ingredient }}
+  </h1>
   <h1>
     Cooks
 

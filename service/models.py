@@ -28,6 +28,13 @@ class Cook(AbstractUser):
     def get_absolute_url(self):
         return reverse("service:cook-detail", args=[str(self.id)])
 
+
+class Ingredient(models.Model):
+    name = models.CharField(max_length=255)
+    def __str__(self):
+        return self.name
+
+
 class Dish(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
@@ -41,7 +48,7 @@ class Dish(models.Model):
         related_name="dishes"
     )
     ingredient = models.ManyToManyField(
-        settings.AUTH_USER_MODEL,
+        Ingredient,
         related_name="dishes"
     )
 

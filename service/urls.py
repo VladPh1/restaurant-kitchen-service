@@ -33,7 +33,7 @@ urlpatterns = [
         name="dish-type-create",
     ),
 path(
-        "dish_type/<int:pk>/create/",
+        "dish_type/<int:pk>/update/",
         DishTypeUpdateView.as_view(),
         name="dish-type-update",
     ),

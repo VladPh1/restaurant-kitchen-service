@@ -52,17 +52,20 @@ class DishTypeListView(LoginRequiredMixin, generic.ListView):
 class DishTypeCreateView(LoginRequiredMixin, generic.CreateView):
     model = DishType
     fields = "__all__"
+    template_name = "service/dish_type_form.html"
     success_url = reverse_lazy("service:dish-type-list")
 
 
 class DishTypeUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = DishType
     fields = "__all__"
+    template_name = "service/dish_type_form.html"
     success_url = reverse_lazy("service:dish-type-list")
 
 
 class DishTypeDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = DishType
+    template_name = "service/dish_type_confirm_delete.html"
     success_url = reverse_lazy("service:dish-type-list")
 
 

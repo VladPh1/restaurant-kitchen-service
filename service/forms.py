@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
 
-from service.models import Dish, Cook
+from service.models import Dish, Cook, DishType
 
 
 class DishForm(forms.ModelForm):
