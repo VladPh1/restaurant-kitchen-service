@@ -21,7 +21,15 @@
     <a href="{% url 'service:ingredient-update' pk=dish.id %}" class="btn btn-secondary link-to-page">
       Update
     </a>
-    <p>{{ dish.ingredient }}</p>
+    <p>
+      <ul>
+        {% for ingredient in dish.ingredients.all %}
+          <li>{{ ingredient }}</li>
+        {% empty %}
+          <li>No ingredients listed.</li>
+        {% endfor %}
+      </ul>
+    </p>
   </h1>
   <h1>
     Cooks
