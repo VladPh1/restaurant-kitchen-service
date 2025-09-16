@@ -49,7 +49,12 @@ class Dish(models.Model):
     )
     ingredient = models.ManyToManyField(
         Ingredient,
-        related_name="dishes"
+        related_name="dishes_with_this_ingredient"
+    )
+    cooks = models.ManyToManyField(
+        settings.AUTH_USER_MODEL,
+        related_name="dishes",
+        blank=True
     )
 
     def __str__(self):
