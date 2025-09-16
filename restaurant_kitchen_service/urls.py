@@ -16,11 +16,19 @@ Including another URLconf
 """
 from debug_toolbar.toolbar import debug_toolbar_urls
 from django.contrib import admin
+from django.http import request
 from django.urls import path, include
 
+from restaurant_kitchen_service import settings
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("service/", include("service.urls", namespace="service")),
     path("accounts/", include("django.contrib.auth.urls")),
-] + debug_toolbar_urls()
+]
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns += [
+        path("__debug__/", include(debug_toolbar.urls)),
+    ]
