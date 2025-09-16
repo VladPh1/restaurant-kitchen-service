@@ -6,8 +6,8 @@ from django.urls import reverse_lazy
 from django.views import generic
 
 from service.forms import DishForm, DishSearchForm, DishTypesSearchForm, CookSearchForm, CookCreationForm, \
-    CookYearOfExperienceUpdateForm
-from service.models import DishType, Cook, Dish
+    CookYearOfExperienceUpdateForm, IngredientCreationForm
+from service.models import DishType, Cook, Dish, Ingredient
 
 
 @login_required
@@ -173,3 +173,25 @@ def toggle_assign_to_dish(request, pk):
     else:
         cook.dishes.add(dish)
     return redirect(reverse_lazy("service:dish-detail", kwargs={"pk": pk}))
+
+
+class IngredientListView(LoginRequiredMixin, generic.ListView):
+    model = Ingredient
+    context_object_name = "ingredient_list"
+
+
+class IngredientCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Ingredient
+    form_class = IngredientCreationForm
+    success_url = reverse_lazy("service:ingredient-list")
+
+
+class IngredientUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Ingredient
+    form_class = IngredientCreationForm
+    success_url = reverse_lazy("service:ingredient-list")
+
+
+class IngredientDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Ingredient
+    success_url = reverse_lazy("service:ingredient-list")

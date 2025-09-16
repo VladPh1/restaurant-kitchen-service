@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
 
-from service.models import Dish, Cook, DishType
+from service.models import Dish, Cook, DishType, Ingredient
 
 
 class DishForm(forms.ModelForm):
@@ -24,6 +24,12 @@ class CookCreationForm(UserCreationForm):
             "first_name",
             "last_name",
         )
+
+
+class IngredientCreationForm(forms.ModelForm):
+    class Meta:
+        model = Ingredient
+        fields = "__all__"
 
 
 class CookYearOfExperienceUpdateForm(forms.ModelForm):
