@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views import generic
 
 from service.forms import DishForm, DishSearchForm, DishTypesSearchForm, CookSearchForm, CookCreationForm, \
@@ -175,23 +175,8 @@ def toggle_assign_to_dish(request, pk):
     return redirect(reverse_lazy("service:dish-detail", kwargs={"pk": pk}))
 
 
-class IngredientListView(LoginRequiredMixin, generic.ListView):
-    model = Ingredient
-    context_object_name = "ingredient_list"
-
-
-class IngredientCreateView(LoginRequiredMixin, generic.CreateView):
-    model = Ingredient
-    form_class = IngredientCreationForm
-    success_url = reverse_lazy("service:ingredient-list")
-
-
 class IngredientUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Ingredient
     form_class = IngredientCreationForm
-    success_url = reverse_lazy("service:ingredient-list")
-
-
-class IngredientDeleteView(LoginRequiredMixin, generic.DeleteView):
-    model = Ingredient
-    success_url = reverse_lazy("service:ingredient-list")
+    success_url = reverse_lazy("service:dish-list")
+    template_name = "service/ingredient_form.html"

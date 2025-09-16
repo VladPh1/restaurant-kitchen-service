@@ -17,9 +17,6 @@
     {{ dish.description }}</p>
   <h1>
     Ingredients
-    <a href="{% url 'service:ingredient-delete' pk=dish.id %}" class="btn btn-danger link-to-page">
-      Delete
-    </a>
 
     <a href="{% url 'service:ingredient-update' pk=dish.id %}" class="btn btn-secondary link-to-page">
       Update
