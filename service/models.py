@@ -23,7 +23,7 @@ class Cook(AbstractUser):
         ordering = ("years_of_experience", )
 
     def __str__(self):
-        return f"{self.username}: ({self.first_name} {self.last_name})"
+        return f"{self.username} ({self.first_name} {self.last_name})"
 
     def get_absolute_url(self):
         return reverse("service:cook-detail", args=[str(self.id)])
