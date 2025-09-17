@@ -59,4 +59,3 @@ class Dish(models.Model):
 
     def __str__(self):
         return f"{self.name} (price: {self.price} , dish type: {self.dish_type.name})"
-

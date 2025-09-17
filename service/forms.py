@@ -6,7 +6,7 @@ from service.models import Dish, Cook, DishType, Ingredient
 
 
 class DishForm(forms.ModelForm):
-    cookers = forms.ModelMultipleChoiceField(
+    cooks = forms.ModelMultipleChoiceField(
         queryset=get_user_model().objects.all(),
         widget=forms.CheckboxSelectMultiple,
     )
