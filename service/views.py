@@ -70,7 +70,7 @@ class DishTypeDeleteView(LoginRequiredMixin, generic.DeleteView):
 
 
 class DishListView(LoginRequiredMixin, generic.ListView):
-    name = Dish
+    model = Dish
     paginate_by = 5
     template_name = "service/dish_list.html"
     context_object_name = "dish_list"

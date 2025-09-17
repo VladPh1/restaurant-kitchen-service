@@ -56,6 +56,8 @@ class Dish(models.Model):
         related_name="dishes",
         blank=True
     )
+    class Meta:
+        ordering = ("name", )
 
     def __str__(self):
         return f"{self.name} (price: {self.price} , dish type: {self.dish_type.name})"
