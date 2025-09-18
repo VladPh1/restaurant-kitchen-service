@@ -1,32 +1,40 @@
-{% extends "base.html" %}
+{% extends 'layouts/base-presentation.html' %}
 
 {% block content %}
-  <h1>
-    Username: {{ cook.username }}
-    <a href="{% url 'service:cook-delete' pk=cook.id %}" class="btn btn-danger link-to-page">
-      Delete
-    </a>
+<div class="card p-4 mx-auto mt-7" style="max-width: 800px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <div class="card-body">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2 class="card-title">Username: {{ cook.username }}</h2>
+      <div>
+        <a href="{% url 'service:cook-delete' pk=cook.id %}" class="btn btn-danger link-to-page me-2">
+          Delete
+        </a>
+        <a href="{% url 'service:cook-update' pk=cook.id %}" class="btn btn-secondary link-to-page">
+          Update Year Of Experience
+        </a>
+      </div>
+    </div>
 
-    <a href="{% url 'service:cook-update' pk=cook.id %}" class="btn btn-secondary link-to-page">
-      Update Year Of Experience
-    </a>
-  </h1>
+    <hr>
 
-  <p><strong>First name:</strong> {{ cook.first_name }}</p>
-  <p><strong>Last name:</strong> {{ cook.last_name }}</p>
-  <p><strong>Year Of Experience:</strong> {{ cook.years_of_experience }}</p>
+    <p><strong>First name:</strong> {{ cook.first_name }}</p>
+    <p><strong>Last name:</strong> {{ cook.last_name }}</p>
+    <p><strong>Year Of Experience:</strong> {{ cook.years_of_experience }}</p>
 
-  <div class="ml-3">
-    <h4>Dishes</h4>
+    <hr>
 
-    {% for dish in cook.dishes.all %}
-        <hr>
-        <p><strong>Name:</strong> {{ dish.name }}</p>
-        <p><strong>Dish Type:</strong> {{ dish.dish_type.name }}</p>
-        <p class="text-muted"><strong>Id:</strong> {{dish.id}}</p>
-
-    {% empty %}
-      <p>No dish!</p>
-    {% endfor %}
+    <div class="mt-4">
+      <h4 class="mb-3">Dishes</h4>
+      {% for dish in cook.dishes.all %}
+        <div class="border-bottom pb-2 mb-2">
+          <p class="mb-1"><strong>Name:</strong> {{ dish.name }}</p>
+          <p class="mb-1"><strong>Dish Type:</strong> {{ dish.dish_type.name }}</p>
+          <p class="text-muted mb-0"><strong>Id:</strong> {{ dish.id }}</p>
+        </div>
+      {% empty %}
+        <p>No dish!</p>
+      {% endfor %}
+    </div>
   </div>
+</div>
 {% endblock %}
