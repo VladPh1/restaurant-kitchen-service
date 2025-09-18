@@ -1,39 +1,53 @@
-{% extends "base.html" %}
+{% extends 'layouts/base-presentation.html' %}
 {% load crispy_forms_filters %}
 
 {% block content %}
-    <h1>
-      Cook List
+<div class="card p-4 mx-auto mt-7" style="max-width: 1000px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <div class="card-body">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2 class="card-title mb-0">Cook List</h2>
       <a href="{% url 'service:cook-create' %}" class="btn btn-primary link-to-page">
         Create
       </a>
-    </h1>
-    <form method="GET" action="" class="form-inline">
-      {{ search_form|crispy }}
-    <input type="submit"  value="🔎"  class="btn btn-secondary">
-    </form>
+    </div>
+
+    <hr>
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <form method="GET" action="" class="d-flex align-items-center">
+        {{ search_form|crispy }}
+        <input type="submit"  value="🔎"  class="btn btn-secondary ms-2">
+      </form>
+    </div>
 
     {% if cook_list %}
-    <table class="table">
-      <tr>
-        <th>ID</th>
-        <th>Username</th>
-        <th>First name</th>
-        <th>Last name</th>
-        <th>Year Of Experience</th>
-      </tr>
-    {% for cook in cook_list %}
-      <tr>
-        <td>{{ cook.id }}</td>
-        <td><a href="{{ cook.get_absolute_url }}">{{ cook.username }} {% if user == cook %} (Me){% endif %}</a></td>
-        <td>{{ cook.first_name }}</td>
-        <td>{{ cook.last_name }}</td>
-        <td>{{ cook.years_of_experience }}</td>
-      </tr>
-    {% endfor %}
-
-    </table>
+      <div class="table-responsive">
+        <table class="table table-striped table-hover">
+          <thead class="bg-light">
+            <tr>
+              <th>ID</th>
+              <th>Username</th>
+              <th>First name</th>
+              <th>Last name</th>
+              <th>Year Of Experience</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for cook in cook_list %}
+            <tr>
+              <td>{{ cook.id }}</td>
+              <td><a href="{{ cook.get_absolute_url }}">{{ cook.username }} {% if user == cook %} (Me){% endif %}</a></td>
+              <td>{{ cook.first_name }}</td>
+              <td>{{ cook.last_name }}</td>
+              <td>{{ cook.years_of_experience }}</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
     {% else %}
-      <p>There are no cooker's in the list.</p>
+      <p>There are no cooks in the list.</p>
     {% endif %}
+  </div>
+</div>
 {% endblock %}
