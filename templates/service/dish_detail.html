@@ -1,0 +1,63 @@
+{% extends "layouts/base-presentation.html" %}
+
+{% block content %}
+<div class="card p-4 mx-auto mt-7" style="max-width: 800px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <div class="card-body">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2 class="card-title">{{ dish.name }}</h2>
+      <div>
+        <a href="{% url 'service:dish-delete' pk=dish.id %}" class="btn btn-danger link-to-page me-2">
+          Delete
+        </a>
+        <a href="{% url 'service:dish-update' pk=dish.id %}" class="btn btn-secondary link-to-page">
+          Update
+        </a>
+      </div>
+    </div>
+
+    <hr>
+
+    <p><strong>Dish Type:</strong> {{ dish.dish_type.name }}</p>
+    <p><strong>Dish Description:</strong></p>
+    <p class="text-muted">{{ dish.description }}</p>
+
+    <hr>
+
+    <div class="mt-4">
+      <h4 class="mb-3">Ingredients</h4>
+      <ul class="list-group list-group-flush">
+        {% for ingredient in dish.ingredients.all %}
+          <li class="list-group-item">{{ ingredient.name }}</li>
+        {% empty %}
+          <li class="list-group-item">No ingredients listed.</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <hr>
+
+    <div class="mt-4">
+      <h4 class="mb-3">Cooks</h4>
+      <div class="mb-3">
+        {% if dish in cook.dishes.all %}
+          <a href="{% url 'service:toggle-dish-assign' pk=dish.id %}" class="btn btn-danger link-to-page">
+            Delete me from this dish
+          </a>
+        {% else %}
+          <a href="{% url 'service:toggle-dish-assign' pk=dish.id %}" class="btn btn-success link-to-page">
+            Assign me from this dish
+          </a>
+        {% endif %}
+      </div>
+
+      <ul class="list-group list-group-flush">
+        {% for cook in dish.cooks.all %}
+          <li class="list-group-item">{{ cook.username }} ({{ cook.first_name }} {{ cook.last_name }})</li>
+        {% empty %}
+          <li class="list-group-item">No cooks assigned.</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}
