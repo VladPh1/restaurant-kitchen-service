@@ -23,7 +23,7 @@ from restaurant_kitchen_service import settings
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("service/", include("service.urls", namespace="service")),
+    path("", include("service.urls", namespace="service")),
     path("accounts/", include("django.contrib.auth.urls")),
 ]
 

@@ -22,12 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ecz-g36=zl**xqb@_5t1lm%ho=^d@!6mwcy6)9&9k90e!@5%xr'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-ecz-g36=zl**xqb@_5t1lm%ho=^d@!6mwcy6)9&9k90e!@5%xr')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -142,4 +142,4 @@ INTERNAL_IPS = [
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
-LOGIN_REDIRECT_URL = "/service/"
+LOGIN_REDIRECT_URL = "/"
