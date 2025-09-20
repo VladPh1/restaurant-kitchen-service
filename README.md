@@ -28,3 +28,10 @@ python manage.py runserver # starts Django server
 ## Demo
 
 ![Website Interface](demo.png)
+
+
+Test User
+```
+login: user
+password: user12345
+```
