@@ -1,0 +1,427 @@
+[
+{
+    "model": "service.dishtype",
+    "pk": 1,
+    "fields": {
+        "name": "Biscuits"
+    }
+},
+{
+    "model": "service.dishtype",
+    "pk": 2,
+    "fields": {
+        "name": "Braai"
+    }
+},
+{
+    "model": "service.dishtype",
+    "pk": 3,
+    "fields": {
+        "name": "Bread"
+    }
+},
+{
+    "model": "service.dishtype",
+    "pk": 4,
+    "fields": {
+        "name": "Cakes"
+    }
+},
+{
+    "model": "service.dishtype",
+    "pk": 5,
+    "fields": {
+        "name": "Curries"
+    }
+},
+{
+    "model": "service.dishtype",
+    "pk": 6,
+    "fields": {
+        "name": "Desserts"
+    }
+},
+{
+    "model": "service.dishtype",
+    "pk": 7,
+    "fields": {
+        "name": "Pasta"
+    }
+},
+{
+    "model": "service.dishtype",
+    "pk": 8,
+    "fields": {
+        "name": "Pizza"
+    }
+},
+{
+    "model": "service.dishtype",
+    "pk": 9,
+    "fields": {
+        "name": "Soup"
+    }
+},
+{
+    "model": "service.dishtype",
+    "pk": 10,
+    "fields": {
+        "name": "Fish"
+    }
+},
+{
+    "model": "service.cook",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$390000$4HzWTIscOUavusqEV5f1yE$u/tlhsU6JAg9AakNfmVP/RIXSJ+JR9y7WiowNrNocr4=",
+        "last_login": "2025-09-19T08:36:00.273Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "freepgvlad@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-09-09T11:22:32.959Z",
+        "years_of_experience": 0,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "service.cook",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$8BSp2u4JxE93LoDLKhD9pT$7bkTFXAVrTxGUphTammbfTIGJsfsbsI5siflatWXLK8=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "thomas_black_1",
+        "first_name": "Thomas",
+        "last_name": "Black",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-09-09T11:48:20.488Z",
+        "years_of_experience": 3,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "service.cook",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$QIkjMpbzqvgZvzowSdaKXb$fljDT7frAlKCJGHZSpSmjbAx4aImMyvR61FI5dTaAD8=",
+        "last_login": "2025-09-09T16:14:51.664Z",
+        "is_superuser": false,
+        "username": "john_deree",
+        "first_name": "John",
+        "last_name": "Deree",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-09-09T11:49:32.405Z",
+        "years_of_experience": 1,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "service.cook",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$ebpezJ8fGMD5V3adz9LafA$WRVQkoTYVFt1U/oyzcmJEPK2bE8ZwBph8iavG8yo1oo=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "gordon_ramsay",
+        "first_name": "Ramsay",
+        "last_name": "Gordon",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-09-09T11:50:40.047Z",
+        "years_of_experience": 15,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "service.cook",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$z6chprjgeBG5Q0bMXCApJw$LtUn8vyX9WcWnhdGjIGY/F4AAVdMzTCdaUTgL1wYeEI=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "elise_gorn",
+        "first_name": "Elise",
+        "last_name": "Gorn",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-09-09T11:51:30.862Z",
+        "years_of_experience": 4,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "service.cook",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$eh6NqWTanqDhjn5Mi7yHts$HumPJIMkvR6J9Kx2I6NcYLgDobQ0RV7IzG45n3XEnr0=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "steave_riddle",
+        "first_name": "Steave",
+        "last_name": "Riddle",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-09-09T11:52:12.788Z",
+        "years_of_experience": 1,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "service.cook",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$M0uZwmh5uTC9JB3y94fAac$pZvisIBIvd687kXonApLt74tax7DD+Ujmi2Jmg+44YM=",
+        "last_login": "2025-09-09T17:30:24.994Z",
+        "is_superuser": false,
+        "username": "vlad_ost",
+        "first_name": "Vladyslav",
+        "last_name": "Ostapenko",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-09-09T17:28:04.781Z",
+        "years_of_experience": 2,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "service.ingredient",
+    "pk": 1,
+    "fields": {
+        "name": "Tomates"
+    }
+},
+{
+    "model": "service.ingredient",
+    "pk": 2,
+    "fields": {
+        "name": "Potato"
+    }
+},
+{
+    "model": "service.ingredient",
+    "pk": 3,
+    "fields": {
+        "name": "Tomates"
+    }
+},
+{
+    "model": "service.ingredient",
+    "pk": 4,
+    "fields": {
+        "name": "Olives"
+    }
+},
+{
+    "model": "service.ingredient",
+    "pk": 5,
+    "fields": {
+        "name": "Eggs"
+    }
+},
+{
+    "model": "service.ingredient",
+    "pk": 6,
+    "fields": {
+        "name": "Sausage"
+    }
+},
+{
+    "model": "service.ingredient",
+    "pk": 7,
+    "fields": {
+        "name": "Cheese"
+    }
+},
+{
+    "model": "service.ingredient",
+    "pk": 8,
+    "fields": {
+        "name": "Butter"
+    }
+},
+{
+    "model": "service.ingredient",
+    "pk": 9,
+    "fields": {
+        "name": "Chicken"
+    }
+},
+{
+    "model": "service.ingredient",
+    "pk": 10,
+    "fields": {
+        "name": "Pork"
+    }
+},
+{
+    "model": "service.ingredient",
+    "pk": 12,
+    "fields": {
+        "name": "Salmon"
+    }
+},
+{
+    "model": "service.dish",
+    "pk": 1,
+    "fields": {
+        "name": "Napoleon",
+        "description": "A Napoleon, or mille-feuille, is a classic French pastry known for its layers of puff pastry and cream. Its name is not a direct tribute to Napoleon Bonaparte but is a corruption of \"mille-feuille,\" meaning \"a thousand leaves,\" which aptly describes its flaky texture. The dessert is characterized by its crisp, buttery layers, typically separated by a sweet filling like pastry cream, whipped cream, or fruit preserves. The top is often decorated with a dusting of powdered sugar, a glaze, or a distinctive feathered pattern.  It's a dessert celebrated for its elegance and delicate balance of textures.",
+        "price": "360.00",
+        "dish_type": 6,
+        "ingredients": [
+            8
+        ],
+        "cooks": [
+            1
+        ]
+    }
+},
+{
+    "model": "service.dish",
+    "pk": 2,
+    "fields": {
+        "name": "Varenyky",
+        "description": "Varenyky are traditional Ukrainian dumplings, a true staple of the country's cuisine. They are made from a simple dough of flour, water, and salt, which is then filled with a variety of sweet or savory ingredients. Common fillings include potatoes, mushrooms, cabbage, cheese, or cherries and other fruits.\r\n\r\nOnce filled, the dumplings are boiled until they float to the surface, signaling they are ready to eat. They are often served with sour cream, fried onions, or melted butter, adding a rich and satisfying finish to this comforting dish.",
+        "price": "180.00",
+        "dish_type": 7,
+        "ingredients": [
+            2
+        ],
+        "cooks": [
+            1
+        ]
+    }
+},
+{
+    "model": "service.dish",
+    "pk": 3,
+    "fields": {
+        "name": "Tomato soup",
+        "description": "Tomato soup is a comforting and classic dish enjoyed worldwide. It's a simple yet versatile soup made primarily from tomatoes, often blended with other vegetables like onions and garlic for added depth of flavor.\r\n\r\nThe soup can be prepared in various ways—from a creamy, smooth purée to a chunky, rustic style with pieces of tomato and other vegetables. It's a popular choice for a light lunch or dinner, and is famously paired with a grilled cheese sandwich for a simple and satisfying meal.",
+        "price": "160.00",
+        "dish_type": 9,
+        "ingredients": [
+            3
+        ],
+        "cooks": [
+            1
+        ]
+    }
+},
+{
+    "model": "service.dish",
+    "pk": 4,
+    "fields": {
+        "name": "Karbonara",
+        "description": "Carbonara, often misspelled or referred to as \"Karbonara,\" is a classic Italian pasta dish from Rome. Its authentic preparation is deceptively simple, yet it's known for its rich, creamy texture without using actual cream.\r\n\r\nThe sauce is made by tossing hot pasta with a mixture of raw eggs, hard cheese(like Pecorino Romano or Parmigiano-Reggiano), cured pork like guanciale (or pancetta), and freshly ground black pepper. The heat from the pasta cooks the eggs just enough to create a velvety sauce that coats every strand.",
+        "price": "280.00",
+        "dish_type": 7,
+        "ingredients": [],
+        "cooks": []
+    }
+},
+{
+    "model": "service.dish",
+    "pk": 5,
+    "fields": {
+        "name": "Pizza Chorizzo",
+        "description": "Adding chorizo to a pizza transforms it from a traditional pie into a bold, spicy, and savory experience. The key is the **chorizo** itself, as its flavor depends on whether you use Spanish or Mexican varieties.\r\n\r\nPizza with chorizo is often paired with other strong flavors like sharp cheeses (Manchego, for example), sweet caramelized onions, or even a spicy element like jalapeños to balance the richness and heat. It's a fantastic alternative to classic pepperoni, offering a deeper and more complex flavor profile.",
+        "price": "350.00",
+        "dish_type": 8,
+        "ingredients": [
+            3
+        ],
+        "cooks": [
+            5
+        ]
+    }
+},
+{
+    "model": "service.dish",
+    "pk": 6,
+    "fields": {
+        "name": "Pizza Hawaii",
+        "description": "Hawaiian pizza is a famously controversial and widely popular pizza that combines the sweet and savory. Despite its name, it was actually invented in Canada in 1962 by Greek-born chef Sam Panopoulos.\r\n\r\nThe standard toppings include a tomato base, mozzarella cheese, ham or bacon, and—the key ingredient—pineapple chunks. The debate over whether pineapple belongs on pizza has made it a symbol of culinary conflict, with strong opinions on both sides. Proponents love the unique contrast between the juicy, sweet fruit and the salty, savory meat and cheese, while critics argue that fruit has no place on a pizza.",
+        "price": "360.00",
+        "dish_type": 8,
+        "ingredients": [],
+        "cooks": []
+    }
+},
+{
+    "model": "service.dish",
+    "pk": 7,
+    "fields": {
+        "name": "Pizza Diavola",
+        "description": "Pizza Diavola, or \"Devil's Pizza,\" is a classic Italian pizza known for its fiery kick. The name itself alludes to its spicy nature. Its key ingredients are simple yet impactful: a base of tomato sauce and mozzarella cheese, topped with spicy salami and often, chili flakes or hot peppers.\r\n\r\nThe heat from the chili and the rich, savory flavor of the salami work together to create a bold and memorable taste profile. It's a popular choice for those who enjoy a pizza with a powerful and spicy flavor.",
+        "price": "380.00",
+        "dish_type": 8,
+        "ingredients": [],
+        "cooks": []
+    }
+},
+{
+    "model": "service.dish",
+    "pk": 8,
+    "fields": {
+        "name": "Puttanesca",
+        "description": "Pasta Puttanesca is a classic Italian dish from Naples, renowned for its bold, pungent, and savory flavor profile. Its name, which is somewhat vulgar in Italian, is said to refer to its quick preparation using simple pantry staples—making it a perfect meal to throw together.\r\n\r\nThe sauce is a robust combination of tomatoes, anchovies, olives, capers, garlic, and red pepper flakes. The anchovies, which dissolve into the sauce, provide a deep, umami richness without a strong \"fishy\" taste, while the olives and capers deliver a briny, salty tang. It's a dish celebrated for its complex flavor achieved through a few potent ingredients, and it is most traditionally served with spaghetti.",
+        "price": "280.00",
+        "dish_type": 7,
+        "ingredients": [],
+        "cooks": []
+    }
+},
+{
+    "model": "service.dish",
+    "pk": 9,
+    "fields": {
+        "name": "Grilled Salmon",
+        "description": "Is a popular and healthy dish prized for its rich flavor and flaky texture. The high heat of the grill creates a beautifully caramelized crust on the outside while keeping the inside tender and moist. A well-prepared piece of grilled salmon can be seasoned simply with salt, pepper, and lemon, or enhanced with marinades and rubs. It is often cooked skin-side down first to protect the delicate flesh and to ensure the skin becomes crispy, adding a desirable crunchy element to the dish.",
+        "price": "400.00",
+        "dish_type": 2,
+        "ingredients": [
+            12
+        ],
+        "cooks": [
+            1
+        ]
+    }
+},
+{
+    "model": "service.dish",
+    "pk": 10,
+    "fields": {
+        "name": "Borch",
+        "description": "Borscht (often misspelled \"borch\") is a vibrant, sour, and hearty soup that is a staple of Eastern European cuisines, particularly in Ukraine. Its characteristic deep red color comes from its main ingredient, beets.\r\n\r\nWhile beets are the star, the soup is a complex and flavorful creation that can include a variety of other vegetables, such as cabbage, potatoes, carrots, and onions. It can be made with or without meat and is often served with a dollop of sour cream (smetana) and a sprinkling of fresh dill. Borscht can be enjoyed hot or cold, making it a versatile dish for any season.",
+        "price": "220.00",
+        "dish_type": 9,
+        "ingredients": [
+            2,
+            3
+        ],
+        "cooks": [
+            1
+        ]
+    }
+}
+]
