@@ -1,21 +1,29 @@
 asgiref==3.9.1
 click==8.3.0
-crispy-bootstrap5==2025.6
+
+# --- Django ---
 Django==5.2.6
 django-crispy-forms==2.4
-django-debug-toolbar==3.8.1
+crispy-bootstrap5==2025.6
+django-debug-toolbar==4.4.6
+
+# --- WSGI / ASGI ---
+gunicorn==23.0.0
+uvicorn==0.36.0
+whitenoise==6.11.0
+h11==0.16.0
+
+# --- Database ---
+psycopg2-binary==2.9.10
+sqlparse==0.5.3
+packaging==25.0
+python-dotenv==1.1.1
+
+# --- Lint / Dev Tools ---
 flake8==5.0.4
 flake8-quotes==3.3.1
 flake8-variables-names==0.0.5
-gunicorn==23.0.0
-h11==0.16.0
 mccabe==0.7.0
-packaging==25.0
 pep8-naming==0.13.2
-psycopg2-binary==2.9.10
 pycodestyle==2.9.1
 pyflakes==2.5.0
-python-dotenv==1.1.1
-sqlparse==0.5.3
-uvicorn==0.36.0
-whitenoise==6.11.0
